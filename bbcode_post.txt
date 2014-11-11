@@ -1,0 +1,89 @@
+This is the archived BB code on the FT post:
+
+[b]Function:[/b]
+Scrapes flight info from a ITA/Matrix Itinerary page and creates a clickable link to Orbitz/Cheaptix, United, and Delta for booking.
+
+[COLOR="Red"]The script may have lots of bugs, double check your flights before purchasing.[/COLOR]
+
+[b]How-To:[/b]
+
+[u]For best results, use an Incognito/Private Window[/u]
+
+[u]You must price in [b]USD[/b][/u]
+
+[b]Method 1: As a User Script[/b]
+  1) Prepare your Browser: [URL="http://userscripts-mirror.org/about/installing.html"]Guide[/URL]
+  2) Download the Script below
+  3) Search [url]http://matrix.itasoftware.com[/url]
+  4) Links will appear after 2-3 seconds on the right side on the Itinerary Page 
+
+[b]Method 2: In Debug Mode[/b]
+  1) Search [url]http://matrix.itasoftware.com[/url] , get to the Itinerary Page
+  2) Right Click anywhere, and click "Inspect Element"
+  3) Click the Console Button
+FF: [IMG]http://i.imgur.com/vvqTYX5.jpg[/IMG]
+Chrome: [IMG]http://i.imgur.com/54KVU0Q.jpg[/IMG]
+
+  4) Paste [i]Compressed Script[/i] from Below
+
+  5) (At the > or >>) , press ENTER, links appear after 2 seconds
+
+
+[b]Contributors[/b]
+paul21
+Steppo
+18sas
+
+
+[b]Versions[/b]
+
+[b][u]Latest--Install/Use These[/u][/b]
+
+[URL="https://raw.githubusercontent.com/paul21ft/ita-matrix-powertools/master/script_minified.txt"]Compressed Script
+(Ctrl+A, Ctrl+C to copy all)[/url]
+
+[URL="https://github.com/paul21ft/ita-matrix-powertools/raw/master/ita-matrix-powertools.user.js"]Installable Userscript[/URL]
+
+[url="https://github.com/paul21ft/ita-matrix-powertools"]GitHub Repo[/url]
+
+
+
+
+[u]0.5[/u]
+
+2014-11-11 
+Edited by Steppo 
+Fixed bug causing close of advanced routing on searchpage,
+moved extraction and linkgenerating to seperate functions,
+added a lot of information like flightdurations/codeshare/layovertime/arrival-time-object,
+complete redesign of data-object, adapted DL/Orbitz/UA/US/Farefreaks/GCM to data-object,
+added segmentskip to Orbitz && FF if its just a technical stop,
+removed usage of itaLocal (replaced by itaLanguage ) and default values in function ( thx to kulin for this hints)
+
+[u]0.3-0.4[/u]
+
+Changelog:
+Added several power features (all credit to Steppo):
+(Added monthly navigation to calendar, added retry for details if content is loading slow, added flights as object (see data var ) , added Farefreaks, added GCM)
+
+Improved united.com booking support
+
+[u]0.2[/u]
+
+Changes:
+Added US Air link
+Added segment-by-segment basis support
+
+[u]0.1[/u]
+Special thanks to 18sas for improvements
+
+Changes:
+Now supports up to 6 legs in Orbitz/Cheaptickets
+Greatly improved support for different airline names (thanks 18sas)
+
+
+[b]Discussion:[/b]
+The original posting can be found [URL="http://www.flyertalk.com/forum/delta-air-lines-skymiles/1556378-untested-guide-complex-online-multi-carrier-bookings-006-dl.html"]here[/URL], related to building links on delta's booking engine. The script scrapes the flight info from the itinerary (flight numbers, dates, class of service, price) and builds a link string to two booking engines (Orbitz/Delta). These links are the same links used by Google Flights (owns ITA) , Kayak, et. al. to drive purchases. I used the Google referrer codes in the scripts, so they should get the commission. It's beyond me why ITA doesn't have some form of purchase link. This a userscript, and like an ad-blocker, it modifies the way a page is viewed by editing DOM objects in the browser. Keep in mind that this tool is meant to do something you already do yourself, but to save time in the process. Any tickets issued by Orbitz/DL via these links could be issued via phone or web search. If the links work, you are avoiding a phone booking fee potentially.
+
+[b]Caveats:[/b]
+Not all fares will be bookable or will price correctly in the booking engines, especially the Delta one.
