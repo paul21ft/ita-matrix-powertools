@@ -12,7 +12,13 @@
 // ==/UserScript==
 
 /*
+ The CONSOLE version is designed to maintain minify support for execution in the command line of browsers
+ (Thus may have special unicode restrictions for OS which do not support copying outside of 7-8bit ASCII)
+*/
+
+/*
  Written by paul21 & Steppo of FlyerTalk.com
+ Includes improvmenets by 18sas
  http://www.flyertalk.com/forum/members/paul21.html
  Copyright Reserved -- At least share with credit if you do
 
