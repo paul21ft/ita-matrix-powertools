@@ -14,6 +14,7 @@
 /*
  Written by paul21 & Steppo of FlyerTalk.com
  http://www.flyertalk.com/forum/members/paul21.html
+ Includes contriutions by 18sas
  Copyright Reserved -- At least share with credit if you do
 
 *********** Changelog **************
