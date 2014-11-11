@@ -800,9 +800,10 @@ function printUS(data){
       // walks each leg
        for (var j=0;j<data["itin"][i]["seg"].length;j++) {
          //walks each segment of leg
-        usUrl += "&o"+i+j+"=" + data["itin"][i]["seg"][j]["orig"] + "&d"+i+j+"=" + data["itin"][i]["seg"][j]["dest"] + "&f"+i+j+"=" + data["itin"][i]["seg"][j]["fnr"];
-        usUrl += "&t"+i+j+"=" + data["itin"][i]["seg"][j]["dep"]["year"] + (data["itin"][i]["seg"][j]["dep"]["month"] < 10 ? "0":"" )+ data["itin"][i]["seg"][j]["dep"]["month"] +(data["itin"][i]["seg"][j]["dep"]["day"] < 10 ? "0":"" ) + data["itin"][i]["seg"][j]["dep"]["day"] + "0000";
-        usUrl += "&x"+i+j+"=" + data["itin"][i]["seg"][j]["farebase"];
+        var segstr = (i+1).toString()+(j+1).toString();
+        usUrl += "&o"+segstr+"=" + data["itin"][i]["seg"][j]["orig"] + "&d"+segstr+"=" + data["itin"][i]["seg"][j]["dest"] + "&f"+segstr+"=" + data["itin"][i]["seg"][j]["fnr"];
+        usUrl += "&t"+segstr+"=" + data["itin"][i]["seg"][j]["dep"]["year"] + (data["itin"][i]["seg"][j]["dep"]["month"] < 10 ? "0":"" )+ data["itin"][i]["seg"][j]["dep"]["month"] +(data["itin"][i]["seg"][j]["dep"]["day"] < 10 ? "0":"" ) + data["itin"][i]["seg"][j]["dep"]["day"] + "0000";
+        usUrl += "&x"+segstr+"=" + data["itin"][i]["seg"][j]["farebase"];
       }
     }
     printUrl(usUrl,"US","");
